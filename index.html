@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxCalc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="annualIncome" id="">
+                <label for="annualIncome">Enter gross annual income <i
+                        class="fa-regular fa-circle-question"></i></label>
+                <img src="assets/exclamation.png" height="18px" alt="" srcset="">
+                <input type="text" placeholder="Enter gross annual income" name="annualIncome" id="annualIncome">
+            </div>
+            <div class="extraIncome" id="">
+                <label for="extraIncome">Enter extra income <i class="fa-regular fa-circle-question"></i></label>
+                <input type="text" placeholder="Enter extra income from your other sources" name="extraIncome" id="extraIncome">
+            </div>
+
+            <div class="ageGroup" id="">
+                <label for="ageGroup">Enter age group <i class="fa-regular fa-circle-question"></i></label>
+                <select name="ageGroup" id="ageGroup">
+
+                    <option value=""></option>
+                    <option value="1">&lt;40</option>
+                    <option value="2">≥40 & &lt;60</option>
+                    <option value="3">≥60</option>
+                </select>
+            </div>
+            <div class="deduction" id="4">
+                <label for="deduction">Enter total applicable deductions</label>
+                <input type="text" placeholder="Add total applicable deductions" name="deduction" id="deduction">
+
+            </div>
+            <button id="Submit" onclick="result()">Submit</button>
+            <p id="demo">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis unde architecto error.
+            </p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
