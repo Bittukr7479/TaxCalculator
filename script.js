@@ -1,53 +1,67 @@
-const annualIncome = document.querySelector(".annualIncome");
-const extraIncome = document.querySelector(".extraIncome");
-const age = document.querySelector(".ageGroup");
-const deduction = document.querySelector(".deduction");
-const Submit = document.querySelector("#Submit");
-const demo = document.querySelector("#demo");
+const annualIncomeInput = document.getElementById("annualIncome");
+const extraIncomeInput = document.getElementById("extraIncome");
+const ageGroupSelect = document.getElementById("ageGroup");
+const deductionInput = document.getElementById("deduction");
+const submitBtn = document.getElementById("submitBtn");
+const demo = document.getElementById("demo");
+const closeBtn = document.getElementById("closeBtn");
+const overallIncome = document.getElementById("overallIncome");
+
+const first = document.getElementById("first");
+const second = document.getElementById("second");
+const third = document.getElementById("third");
+const fourth = document.getElementById("fourth");
 
 
-function overallIncome() {
-    netIncome = annualIncome.value + extraIncome.value - deduction.value;
-    var finalIncome;
-    if (netIncome <= 8) {
-        finalIncome = netIncome;
-        return finalIncome;
-    } else {
-        if (age.value < 40) {
-            const tax = .3 * (annualIncome.value + extraIncome.value - 8)
-            finalIncome = netIncome - tax;
-            return finalIncome;
-        } else if (age.value >= 40 && age.Value < 60) {
-            const tax = .4 * (annualIncome.value + extraIncome.value - 8)
-            finalIncome = netIncome - tax;
-            return finalIncome;
-        } else if (age.value >= 60) {
-            const tax = .1 * (annualIncome.value + extraIncome.value - 8)
-            finalIncome = netIncome - tax;
-            return finalIncome;
+function calculateTax() {
+    const annualIncome = parseFloat(annualIncomeInput.value);
+    const extraIncome = parseFloat(extraIncomeInput.value);
+    const deductions = parseFloat(deductionInput.value);
+    const ageGroup = ageGroupSelect.value;
+
+    if (isNaN(annualIncome) || isNaN(extraIncome) || isNaN(deductions) || ageGroup === "") {
+        demo.innerHTML = "Please enter valid numbers and select an age group.";
+        if ((isNaN(annualIncome))) {
+            first.classList.remove("hidden");
+        } else if ((isNaN(extraIncome))) {
+            second.classList.remove("hiden");
+        } else if ((isNaN(deductions))) {
+            fourth.classList.remove("hiden");
+        } else if ((ageGroup === "")) {
         } else {
-            finalIncome = 0;
-            return finalIncome;
+            third.classList.remove("hiden");
+
         }
+
+    } else {
+        const netIncome = annualIncome + extraIncome - deductions;
+        let finalIncome = netIncome;
+
+
+        if (netIncome > 800000) {
+            let taxRate;
+            if (ageGroup === "1") {
+                taxRate = 0.3;
+            } else if (ageGroup === "2") {
+                taxRate = 0.4;
+            } else if (ageGroup === "3") {
+                taxRate = 0.1;
+            }
+
+            const taxableAmount = netIncome - 800000;
+            const tax = taxRate * taxableAmount;
+            finalIncome = netIncome - tax;
+        }
+
+        demo.innerHTML = `Final Income after tax: ${finalIncome.toFixed(2)}`;
     }
 }
-function result() {
-    demo.innerHTML = overallIncome();
-    window.onload = result;
+
+function closeButton() {
+    overallIncome.innerHTML = "lorem";
 }
 
+// closeBtn.addEventListener("click", closeButton);
 
-// function myFunction() {
-//     // Get the value of the input field with id="numb"
-//     let x = document.getElementById("numb").value;
-//     // If x is Not a Number or less than one or greater than 10
-//     let text;
-//     if (isNaN(x) || x < 1 || x > 10) {
-//       text = "Input not valid";
-//     } else {
-//       text = "Input OK";
-//     }
-//     document.getElementById("demo").innerHTML = text;
-//   }
-
+submitBtn.addEventListener("click", calculateTax);
 

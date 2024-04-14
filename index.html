@@ -13,37 +13,40 @@
 
 <body>
     <div class="container">
-        <form action="">
-            <div class="annualIncome" id="">
-                <label for="annualIncome">Enter gross annual income <i
-                        class="fa-regular fa-circle-question"></i></label>
-                <img src="assets/exclamation.png" height="18px" alt="" srcset="">
+        <form id="taxForm">
+            <div class="annualIncome">
+                <label for="annualIncome">Enter gross annual income <i class="far fa-question-circle"></i></label>
                 <input type="text" placeholder="Enter gross annual income" name="annualIncome" id="annualIncome">
+                <span id="first" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                <!-- <div class="what hidden">Gross annual income is your total salaryin a year before any deductions</div> -->
+                <div class="error-tooltip">Please enter a valid number</div>
             </div>
-            <div class="extraIncome" id="">
-                <label for="extraIncome">Enter extra income <i class="fa-regular fa-circle-question"></i></label>
-                <input type="text" placeholder="Enter extra income from your other sources" name="extraIncome" id="extraIncome">
+            <div class="extraIncome">
+                <label for="extraIncome">Enter extra income <i class="far fa-question-circle"></i></label>
+                <input  type="text" placeholder="Enter extra income from other sources" name="extraIncome" id="extraIncome">
+                <span id="second" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                <div class="error-tooltip">Please enter a valid number</div>
             </div>
-
-            <div class="ageGroup" id="">
-                <label for="ageGroup">Enter age group <i class="fa-regular fa-circle-question"></i></label>
+            <div class="ageGroup">
+                <label for="ageGroup">Select age group <i class="far fa-question-circle"></i></label>
                 <select name="ageGroup" id="ageGroup">
-
-                    <option value=""></option>
+                    <option value="">Select</option>
                     <option value="1">&lt;40</option>
                     <option value="2">≥40 & &lt;60</option>
                     <option value="3">≥60</option>
                 </select>
+                <span id="third" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                <div class="error-tooltip">Please select an age group</div>
             </div>
-            <div class="deduction" id="4">
+            <div class="deduction">
                 <label for="deduction">Enter total applicable deductions</label>
                 <input type="text" placeholder="Add total applicable deductions" name="deduction" id="deduction">
+                <span id="fourth" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                <div class="error-tooltip">Please select a valid number</div>
 
             </div>
-            <button id="Submit" onclick="result()">Submit</button>
-            <p id="demo">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis unde architecto error.
-            </p>
+            <button type="button" id="submitBtn">Submit</button>
+            <p id="demo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis unde architecto error.</p>
         </form>
     </div>
 

@@ -1,0 +1,20 @@
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid rgb(128, 125, 125);
+    margin: 10% 25%;
+    padding: 5%;
+    font-weight: 800;
+    font-size: large;
+}
+
+button{
+    width: 5rem;
+    height: 2rem;
+    background-color: blue;
+    color: white;
+    font-size: large;
+    border-radius: 4px;
+}
