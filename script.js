@@ -20,23 +20,23 @@ function calculateTax() {
     const ageGroup = ageGroupSelect.value;
 
     if (isNaN(annualIncome) || isNaN(extraIncome) || isNaN(deductions) || ageGroup === "") {
-        demo.innerHTML = "Please enter valid numbers and select an age group.";
+        demo.innerHTML = `<p style="color:red;">"Please enter valid numbers and select an age group."</p>`;
         if ((isNaN(annualIncome))) {
             first.classList.remove("hidden");
         } else if ((isNaN(extraIncome))) {
-            second.classList.remove("hiden");
+            second.classList.remove("hidden");
         } else if ((isNaN(deductions))) {
-            fourth.classList.remove("hiden");
-        } else if ((ageGroup === "")) {
+            fourth.classList.remove("hidden");
+        } else if ((ageGroup === "select")) {
         } else {
-            third.classList.remove("hiden");
+            third.classList.remove("hidden");
 
         }
 
     } else {
+        
         const netIncome = annualIncome + extraIncome - deductions;
         let finalIncome = netIncome;
-
 
         if (netIncome > 800000) {
             let taxRate;
@@ -53,7 +53,7 @@ function calculateTax() {
             finalIncome = netIncome - tax;
         }
 
-        demo.innerHTML = `Final Income after tax: ${finalIncome.toFixed(2)}`;
+        demo.innerHTML = `${finalIncome.toFixed(2)}`;
     }
 }
 

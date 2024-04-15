@@ -33,7 +33,7 @@ body{
     display: none;
     position: relative;
     z-index: -1;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     color: white;
     font-size: 17px;
     display: flex;
@@ -43,36 +43,68 @@ body{
     width: 15rem;
     border-radius: 3px;
     margin-bottom: 0px;
-    top: -300.5%;
+    bottom: 221%;
     left: 90%;
     padding: 16px;
 }
 
-.what{
+.error-icon{
+    height: 0px;
     position: relative;
-    background-color: green;
-    color: white;
-    font-size: 17px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 5rem;
-    width: 8rem;
-    border-radius: 3px;
-    margin-bottom: 0px;
-    top: 7.5%;
-    left: 15%;
-    padding: 15px;
+    margin-top: -10%;
 }
+
 .error-icon:hover + .error-tooltip{
     background-color: rgb(78, 77, 77);
     z-index: 1;
 }
 
-span{
+.error-question {
+    width: 11rem;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(78 77 77);
+    padding: 15px;
+    border-radius: 3px;
     position: relative;
-    /* height: 0px; */
-    top: -278%;
+    top: -5%;
+}
+
+.annualIncome> .error-question{
+    left: 38%;
+    display: none;
+}
+
+.extraIncome> .error-question{
+    left: 37%;
+    position: absolute;
+    top: 23%;
+    display: none;
+}
+
+.ageGroup> .error-question{
+    left: 23%;
+    position: absolute;
+    top: 36%;
+    left: 35%;
+    display: none;
+}
+
+.deduction> .error-question{
+    left: 48%;
+    position: absolute;
+    display: none;
+    top: 50%;
+}
+
+.far.fa-question-circle:hover{
+    color: red;
+    transform: scale(1.2);
+}
+
+.far.fa-question-circle:hover + .deduction> .error-question{
+    /* display: grid; */
+    color: #f04e4e;
 }
 
 .fa-exclamation-circle{
@@ -86,7 +118,6 @@ div{
     display: grid;
     list-style: none;
     font-size: 20px;
-    margin-bottom: 20px;
     font-weight: 600;
 }
 
@@ -129,3 +160,4 @@ button{
 .hidden{
     display: none;
 }
+

@@ -6,50 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaxCalc</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="FinalIncome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="container">
-        <form id="taxForm">
-            <div class="annualIncome">
-                <label for="annualIncome">Enter gross annual income <i class="far fa-question-circle"></i></label>
-                <input type="text" placeholder="Enter gross annual income" name="annualIncome" id="annualIncome">
-                <span id="first" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
-                <!-- <div class="what hidden">Gross annual income is your total salaryin a year before any deductions</div> -->
-                <div class="error-tooltip">Please enter a valid number</div>
-            </div>
-            <div class="extraIncome">
-                <label for="extraIncome">Enter extra income <i class="far fa-question-circle"></i></label>
-                <input  type="text" placeholder="Enter extra income from other sources" name="extraIncome" id="extraIncome">
-                <span id="second" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
-                <div class="error-tooltip">Please enter a valid number</div>
-            </div>
-            <div class="ageGroup">
-                <label for="ageGroup">Select age group <i class="far fa-question-circle"></i></label>
-                <select name="ageGroup" id="ageGroup">
-                    <option value="">Select</option>
-                    <option value="1">&lt;40</option>
-                    <option value="2">≥40 & &lt;60</option>
-                    <option value="3">≥60</option>
-                </select>
-                <span id="third" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
-                <div class="error-tooltip">Please select an age group</div>
-            </div>
-            <div class="deduction">
-                <label for="deduction">Enter total applicable deductions</label>
-                <input type="text" placeholder="Add total applicable deductions" name="deduction" id="deduction">
-                <span id="fourth" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
-                <div class="error-tooltip">Please select a valid number</div>
+    <div>
 
-            </div>
-            <button type="button" id="submitBtn">Submit</button>
-            <p id="demo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis unde architecto error.</p>
-        </form>
+        <div class="container">
+            <form id="taxForm">
+                <div class="annualIncome">
+                    <div class="error-question">Gross annual income is your total salaryin a year before any deductions
+                    </div>
+                    <label for="annualIncome">Enter gross annual income <i class="far fa-question-circle"></i></label>
+                    <input type="text" placeholder="Enter gross annual income" name="annualIncome" id="annualIncome">
+                    <div id="first" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></div>
+                    <div class="error-tooltip">Please enter a valid number</div>
+                </div>
+                <div class="extraIncome">
+                    <div class="error-question">Gross annual income is your total salaryin a year before any deductions
+                    </div>
+                    <label for="extraIncome">Enter extra income <i class="far fa-question-circle"></i></label>
+                    <input type="text" placeholder="Enter extra income from other sources" name="extraIncome"
+                        id="extraIncome">
+                    <span id="second" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-tooltip">Please enter a valid number</div>
+                </div>
+                <div class="ageGroup">
+                    <div class="error-question">Gross annual income is your total salaryin a year before any deductions
+                    </div>
+                    <label for="ageGroup">Select age group <i class="far fa-question-circle"></i></label>
+                    <select name="ageGroup" id="ageGroup">
+                        <option value="">Select</option>
+                        <option value="1">&lt;40</option>
+                        <option value="2">≥40 & &lt;60</option>
+                        <option value="3">≥60</option>
+                    </select>
+                    <span id="third" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-tooltip">Please select an age group</div>
+                </div>
+                <div class="deduction">
+                    <div class="error-question">Gross annual income is your total salaryin a year before any deductions
+                    </div>
+                    <label for="deduction">Enter total applicable deductions <i
+                            class="far fa-question-circle"></i></label>
+                    <input type="text" placeholder="Add total applicable deductions" name="deduction" id="deduction">
+                    <span id="fourth" class="error-icon hidden"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-tooltip">Please select a valid number</div>
+                </div>
+
+                <button type="button" id="submitBtn">Submit</button>
+            </form>
+        </div>
+        <div class="result">
+            <h2>Your overall income will be:</h2>
+            <h3 id="demo">..............</h3>
+            <p>after tax deductions</p>
+            <a href="index.html">
+                <button>Close</button>
+            </a>
+        </div>
+
     </div>
-
     <script src="script.js"></script>
 </body>
 

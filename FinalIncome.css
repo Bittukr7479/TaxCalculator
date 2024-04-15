@@ -8,6 +8,7 @@
     padding: 5%;
     font-weight: 800;
     font-size: large;
+    width: 21rem;
 }
 
 button{
@@ -18,3 +19,12 @@ button{
     font-size: large;
     border-radius: 4px;
 }
+
+h2{
+    margin: 0px;
+}
+
+p{
+    margin: 0px;
+}
+
